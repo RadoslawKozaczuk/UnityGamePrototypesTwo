@@ -1,42 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-	[Tooltip("In m^-1")]
-	[SerializeField] private float xSpeed = 20f;
+	[Header("General")]
+	[Tooltip("In m^-1")] [SerializeField] private float xSpeed = 20f;
+	[Tooltip("In m^-1")] [SerializeField] private float ySpeed = 14f;
+	[Tooltip("Horizontal max lean range in m")]	[SerializeField] private float xRange = 9f;
+	[Tooltip("Vertical max lean range in m")] [SerializeField] private float yRange = 4f;
 
-	[Tooltip("In m^-1")]
-	[SerializeField] private float ySpeed = 14f;
-
-	[Tooltip("Horizontal max lean range in m")]
-	[SerializeField] private float xRange = 9f;
-
-	[Tooltip("Vertical max lean range in m")]
-	[SerializeField] private float yRange = 4f;
-	
+	[Header("Screen-position Based")]
 	[SerializeField] private float positionPitchFactor = -3f;
 	[SerializeField] private float positionYawFactor = 3f;
 
+	[Header("Control-throw Based")]
 	[SerializeField] private float controlPitchFactor = -20f;
 	[SerializeField] private float controlRollFactor = -20f;
 
 	// how much a button was pressed
 	float xThrow, yThrow;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+	bool isControlEnabled = true;
 	
-	// Update is called once per frame
 	void Update ()
 	{
-		ProcessTranslation();
-
-		ProcessRotation();
+		if (isControlEnabled)
+		{
+			ProcessTranslation();
+			ProcessRotation();
+		}
 	}
 
 	void ProcessTranslation()
@@ -60,5 +51,11 @@ public class Player : MonoBehaviour
 		float roll = xThrow * controlRollFactor;
 		
 		transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+	}
+
+	void OnPlayerDeath()
+	{
+		isControlEnabled = false;
+		print("Controller frozen");
 	}
 }
