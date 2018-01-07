@@ -7,8 +7,17 @@ public class MusicPlayer : MonoBehaviour {
 
 	void Awake()
 	{
-		// this means don't destroy the object that this script is attached to
-		DontDestroyOnLoad(gameObject);
+		// if more than one music player in scene destroy yourself
+		// Unity Singleton Pattern
+		if (FindObjectsOfType<MusicPlayer>().Length > 1)
+		{
+			Destroy(this);
+		}
+		else
+		{
+			// this means don't destroy the object that this script is attached to
+			DontDestroyOnLoad(gameObject);
+		}
 	}
 
 	// Use this for initialization

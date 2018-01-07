@@ -233,21 +233,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 82957641963924598, guid: 2f9f7eb1573b262458ec7d548356215d,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82957641963924598, guid: 2f9f7eb1573b262458ec7d548356215d,
-        type: 2}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82957641963924598, guid: 2f9f7eb1573b262458ec7d548356215d,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f9f7eb1573b262458ec7d548356215d, type: 2}
   m_IsPrefabParent: 0
