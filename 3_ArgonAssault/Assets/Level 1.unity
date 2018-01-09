@@ -199,6 +199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d1dc2c711000a4cbedf409675f4ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &13212823 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1751294005913204, guid: 01d6d0f7f1d222f47844ff4df0b570cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1044075712}
 --- !u!1 &54029067
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +896,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 54029071}
     m_Modifications:
+    - target: {fileID: 114328021330407974, guid: 01d6d0f7f1d222f47844ff4df0b570cf,
+        type: 2}
+      propertyPath: Guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4580271684308242, guid: 01d6d0f7f1d222f47844ff4df0b570cf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -923,9 +933,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1266401121741302, guid: 01d6d0f7f1d222f47844ff4df0b570cf, type: 2}
+      propertyPath: m_Name
+      value: Left Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751294005913204, guid: 01d6d0f7f1d222f47844ff4df0b570cf, type: 2}
+      propertyPath: m_Name
+      value: Right Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 114328021330407974, guid: 01d6d0f7f1d222f47844ff4df0b570cf,
+        type: 2}
+      propertyPath: Guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1162056270}
+    - target: {fileID: 114328021330407974, guid: 01d6d0f7f1d222f47844ff4df0b570cf,
+        type: 2}
+      propertyPath: Guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 13212823}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01d6d0f7f1d222f47844ff4df0b570cf, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1162056270 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1266401121741302, guid: 01d6d0f7f1d222f47844ff4df0b570cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1044075712}
 --- !u!1001 &1175727341
 Prefab:
   m_ObjectHideFlags: 0

@@ -8,14 +8,15 @@ public class PlayerController : MonoBehaviour
 	[Tooltip("In m^-1")] [SerializeField] private float ySpeed = 14f;
 	[Tooltip("Horizontal max lean range in m")]	[SerializeField] private float xRange = 9f;
 	[Tooltip("Vertical max lean range in m")] [SerializeField] private float yRange = 4f;
+	[SerializeField] GameObject[] guns;
 
 	[Header("Screen-position Based")]
-	[SerializeField] private float positionPitchFactor = -3f;
-	[SerializeField] private float positionYawFactor = 3f;
+	[SerializeField] float positionPitchFactor = -3f;
+	[SerializeField] float positionYawFactor = 3f;
 
 	[Header("Control-throw Based")]
-	[SerializeField] private float controlPitchFactor = -20f;
-	[SerializeField] private float controlRollFactor = -20f;
+	[SerializeField] float controlPitchFactor = -20f;
+	[SerializeField] float controlRollFactor = -20f;
 
 	// how much a button was pressed
 	float xThrow, yThrow;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 		{
 			ProcessTranslation();
 			ProcessRotation();
+			ProcessFiring();
 		}
 	}
 
@@ -51,6 +53,14 @@ public class PlayerController : MonoBehaviour
 		float roll = xThrow * controlRollFactor;
 		
 		transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+	}
+
+	void ProcessFiring()
+	{
+		bool fire = CrossPlatformInputManager.GetButton("Fire1");
+
+		foreach (var gun in guns)
+			gun.SetActive(fire);
 	}
 
 	void OnPlayerDeath()
