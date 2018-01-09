@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198371594012807292}
   - component: {fileID: 199642210035914258}
   m_Layer: 0
-  m_Name: Left Bullets
+  m_Name: Left Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 198848644398139362}
   - component: {fileID: 199209448230899766}
   m_Layer: 0
-  m_Name: Right Bullets
+  m_Name: Right Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,6 +316,9 @@ MonoBehaviour:
   ySpeed: 14
   xRange: 8.5
   yRange: 4
+  guns:
+  - {fileID: 1266401121741302}
+  - {fileID: 1751294005913204}
   positionPitchFactor: -3
   positionYawFactor: 4
   controlPitchFactor: -20

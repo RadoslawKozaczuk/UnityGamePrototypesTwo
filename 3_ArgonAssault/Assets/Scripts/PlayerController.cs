@@ -57,8 +57,10 @@ public class PlayerController : MonoBehaviour
 
 	void ProcessFiring()
 	{
-		bool fire = CrossPlatformInputManager.GetButton("Fire1");
-
+		bool fire = CrossPlatformInputManager.GetButton("Fire1") 
+			|| CrossPlatformInputManager.GetButton("Fire2") 
+			|| CrossPlatformInputManager.GetButton("Fire3");
+		
 		foreach (var gun in guns)
 			gun.SetActive(fire);
 	}
@@ -66,6 +68,5 @@ public class PlayerController : MonoBehaviour
 	void OnPlayerDeath()
 	{
 		isControlEnabled = false;
-		print("Controller frozen");
 	}
 }
