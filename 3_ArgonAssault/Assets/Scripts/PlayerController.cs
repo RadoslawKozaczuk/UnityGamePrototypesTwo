@@ -60,9 +60,12 @@ public class PlayerController : MonoBehaviour
 		bool fire = CrossPlatformInputManager.GetButton("Fire1") 
 			|| CrossPlatformInputManager.GetButton("Fire2") 
 			|| CrossPlatformInputManager.GetButton("Fire3");
-		
+
 		foreach (var gun in guns)
-			gun.SetActive(fire);
+		{
+			var emission = gun.GetComponent<ParticleSystem>().emission;
+			emission.enabled = fire;
+		}	
 	}
 
 	void OnPlayerDeath()
