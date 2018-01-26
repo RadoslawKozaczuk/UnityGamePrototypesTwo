@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
 	void OnParticleCollision(GameObject other)
 	{
-		if (--health <= 10)
+		if (--health <= 0)
 		{
 			scoreBoard.IncreaseScore(score);
 			KillEnemy();

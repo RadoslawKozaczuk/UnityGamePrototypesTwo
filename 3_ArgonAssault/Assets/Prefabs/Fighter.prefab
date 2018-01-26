@@ -189,8 +189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1028501872090438, guid: 3989b38b0c133fc4b804d53da22e4b3a, type: 2}
   parent: {fileID: 0}
-  score: 50
-  health: 15
+  score: 20
+  health: 5
 --- !u!198 &198590195401653214
 ParticleSystem:
   m_ObjectHideFlags: 1
